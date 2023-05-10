@@ -1,0 +1,74 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin fitImg {
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin grid-2-3 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem; /* gap between items */
+}
+
+@mixin grid-3-3 {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); /* 3 rows */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 5rem; /* gap between items */
+}
+
+@mixin grid-2-2 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 5rem; /* gap between items */
+}
+
+@mixin flex-1-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin respond-phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}

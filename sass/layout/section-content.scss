@@ -1,0 +1,75 @@
+.section-content {
+  display: flex;
+  height: 60rem;
+  width: 100vw;
+  gap: 3rem;
+  @include respond(phone) {
+    @include flex-1-col;
+    padding-left: 1rem;
+    margin-bottom: 5rem;
+  }
+  .section-1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    &__image {
+      filter: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.11));
+      border-radius: 16px;
+      margin-left: auto;
+      > img {
+        @include fitImg;
+      }
+    }
+
+    &__style {
+      position: absolute;
+      background-color: $sectionStyle-1;
+      width: 90%;
+      height: 100%;
+      z-index: -1;
+      left: 0;
+      border-radius: 0px 48px 48px 0px;
+    }
+  }
+  .section-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    .text-box__style {
+      @include flexCenter;
+    }
+    .text-box__style__image {
+      background-image: url("/img/carbon_quotes.png");
+      background-size: contain;
+      width: 8rem;
+      height: 8rem;
+      z-index: 10;
+    }
+  }
+}
+
+.section-2__state {
+  @include flexCenter;
+  justify-content: start;
+  gap: 1.3rem;
+  @include respond(phone) {
+    justify-content: center;
+  }
+}
+
+.section-2__comment {
+  color: $colorLightPurple;
+  letter-spacing: 0.075em;
+}
+
+.section-2__author {
+  font-size: 1.8rem;
+  color: #2d2a3e;
+  @include respond(phone) {
+    text-align: center;
+  }
+}

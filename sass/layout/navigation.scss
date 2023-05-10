@@ -1,0 +1,53 @@
+@import "../abstracts/mixins.scss";
+@import "../abstracts/variables.scss";
+.navigation {
+  @include flexBetween;
+
+  &__logo {
+    > img {
+      @include fitImg;
+      padding-left: 3rem;
+    }
+  }
+
+  &__nav {
+    @include flexCenter;
+    width: 55%;
+  }
+
+  &__list {
+    width: 65%;
+    @include flexBetween;
+    list-style: none;
+    color: $colorPrimary;
+    padding: 0;
+    font-size: 2rem;
+    @include respond(tab-land) {
+      // width < 1200?
+      font-size: 1.5rem; // 1 rem = 9px, 9/16 = 56.25%
+    }
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    margin-left: 2rem;
+    display: flex;
+    > button {
+      margin-right: 0.5rem;
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    @include respond(tab-port) {
+      // width < 1200?
+      .navigation-menu {
+        display: block;
+        width: 3rem;
+        height: 4rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+}

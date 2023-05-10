@@ -1,0 +1,10 @@
+.section-header {
+  display: flex;
+  flex-direction: row;
+  @include respond(tab-port) {
+    @include grid-2-2;
+  }
+  @include respond(phone) {
+    @include flex-1-col;
+  }
+}

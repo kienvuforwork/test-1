@@ -1,0 +1,31 @@
+@import "../abstracts/mixins.scss";
+@import "../abstracts/variables.scss";
+
+.section-header-box {
+  @include flexCenter;
+  flex-direction: column;
+}
+
+.section-header-box__title {
+  font-weight: 800;
+  font-size: 3.8rem;
+  color: $colorDarkPurple;
+  margin-bottom: 4.4rem;
+  span {
+    color: $colorDarkBlue;
+  }
+  @include respond(phone) {
+    text-align: center;
+  }
+}
+.section-header-box__description {
+  width: 70%;
+  font-size: 2rem;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.075em;
+  color: $colorLightPurple;
+  @include respond(phone) {
+    text-align: center;
+  }
+}

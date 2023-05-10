@@ -1,0 +1,100 @@
+@import "../abstracts/mixins.scss";
+
+.popular-section {
+  padding: 7rem;
+  @include grid-3-3;
+  @include respond(tab-land) {
+    // width < 1200?
+    @include grid-2-2; // 1 rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(phone) {
+    @include flex-1-col;
+  }
+}
+
+.navigation-menu {
+  display: none;
+}
+.popular-card {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  height: 30rem;
+}
+
+.popular-card__img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  &--1 {
+    background-image: url("/img/pl1.png");
+  }
+  &--2 {
+    background-image: url("/img/pl2.png");
+  }
+  &--3 {
+    background-image: url("/img/pl3.png");
+  }
+  &--4 {
+    background-image: url("/img/pl4.png");
+  }
+  &--5 {
+    background-image: url("/img/pl5.png");
+  }
+  &--6 {
+    background-image: url("/img/pl6.png");
+  }
+  &--7 {
+    background-image: url("/img/pl7.png");
+  }
+  &--8 {
+    background-image: url("/img/pl8.png");
+  }
+  &--9 {
+    background-image: url("/img/pl9.png");
+  }
+}
+
+.popular-card__title {
+  font-weight: 600;
+  font-size: 2.1rem;
+  margin-top: 3rem;
+  color: #000000;
+}
+
+.popular-card__description {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #817f8a;
+}
+
+// .popular-card__icon {
+// }
+
+.design-icon {
+  @include flexCenter;
+  width: 8rem;
+  height: 4rem;
+  position: absolute;
+  background-color: #5d69fb;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  top: 100%;
+  padding: 1rem;
+  transform: translateY(-70%);
+}
+
+.triangle {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  background-color: #3e46a4;
+  top: 100%;
+  left: 8rem;
+  border-style: solid;
+  border-width: 2rem 0 0 2rem;
+  border-color: #3e46a4 transparent transparent transparent;
+  clip-path: polygon(0 0, calc(100% - 5rem) 0, 100% 6rem, 100% 100%, 0 100%);
+  transform: translate(0, -100%);
+}
